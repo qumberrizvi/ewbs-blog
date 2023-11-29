@@ -12,7 +12,7 @@ export default function Header() {
                     </NavbarBrand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mx-auto">
+                        <Nav className="mx-auto" id="navbar-nav-id">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <NavDropdown title="MainLand" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">MainLand</NavDropdown.Item>

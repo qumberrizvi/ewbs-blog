@@ -27,10 +27,7 @@ body {
   /*  rgb(var(--background-start-rgb));*/
 }
 
-#navbar
+#navbar-nav-id
 {
-  /*max-height: 200px;*/
-  /*background:blueviolet;*/
-  /*display: flex;*/
-  /*justify-items: right;*/
+  padding-left:425px;
 }
