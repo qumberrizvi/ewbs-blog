@@ -37,7 +37,7 @@ export default async function Page({params}: { params: { slug: string } }) {
         <Container className="py-5">
             <Row>
                 {(post) && (
-                    <Col sm={7} md={8} className=" px-2">
+                    <Col sm={7} md={8} className=" px-2 single-post">
                         <h2>{post.title}</h2>
                         <hr/>
                         <div className="rounded shadow-lg position-relative">

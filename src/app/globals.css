@@ -221,3 +221,7 @@ a {
     height: auto !important;
     position: relative;
 }
+
+.single-post a {
+    color: darkred !important;
+}
