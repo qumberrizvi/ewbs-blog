@@ -8,8 +8,9 @@ import {Metadata} from "next";
 import {Paginator} from "@/types/paginator";
 import placeholder from '@/images/placeholder.png';
 
-export function generateMetadata(post: Post): Metadata {
+export async function generateMetadata({params}: { params: { slug: string } }): Promise<Metadata> {
     const appUrl = process.env.APP_URL || 'https://ewbsbusiness.ae/blog/';
+    const post: Post = await fetcher(`${endpoints.posts}${params.slug}`);
     return {
         metadataBase: new URL(appUrl),
         title: post.seo_title || post.title,
