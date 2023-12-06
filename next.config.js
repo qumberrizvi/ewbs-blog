@@ -9,7 +9,14 @@ const nextConfig = {
                 port: '',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'ewbsbusiness.ae',
+                port: '',
+                pathname: '/**',
+            },
         ],
+        domains: ['ewbsbusiness.ae', '*ewbsbusiness.ae']
     },
 }
 
