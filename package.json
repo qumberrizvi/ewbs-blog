@@ -2,6 +2,7 @@
   "name": "ewbs-next",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ewbsbusiness.ae/blog",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
