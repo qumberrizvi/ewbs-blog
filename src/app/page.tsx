@@ -5,6 +5,8 @@ import {fetcher} from "@/api/fetcher";
 import {Post} from "@/types/post";
 import {Paginator} from "@/types/paginator";
 import Image from "next/image";
+import Link from "next/link";
+import placeholder from '@/images/placeholder.png';
 
 const fetchPosts = async () => {
     const posts: Paginator<Post> = await fetcher(endpoints.posts);
@@ -26,9 +28,9 @@ export default async function Home() {
                             <div
                                 className="h-48 lg:h-auto lg:w-48 flex-none rounded-t lg:rounded-t-none lg:rounded-l overflow-hidden">
                                 <a href="/post">
-                                    <img
+                                    <Image
                                         className="w-full lg:w-64 h-full object-cover rounded-t lg:rounded-t-none lg:rounded-l"
-                                        src="/images/1.jpg" alt="Woman holding a mug"/>
+                                        src={placeholder} alt="Woman holding a mug"/>
                                 </a>
                             </div>
                             <div
@@ -42,7 +44,7 @@ export default async function Home() {
                                         exercitationem praesentium nihil.</p>
                                 </div>
                                 <div className="flex items-center">
-                                    <img className="w-10 h-10 rounded-full mr-4" src="/images/1.jpg"
+                                    <Image className="w-10 h-10 rounded-full mr-4" src={placeholder}
                                          alt="Avatar of Jonathan Reinink"/>
                                     <div className="text-sm">
                                         <p className="text-gray-900 leading-none">Jonathan Reinink</p>
@@ -58,9 +60,9 @@ export default async function Home() {
                             <div
                                 className="h-48 lg:h-auto lg:w-48 flex-none rounded-t lg:rounded-t-none lg:rounded-l overflow-hidden">
                                 <a href="/post">
-                                    <img
+                                    <Image
                                         className="w-full lg:w-64 h-full object-cover rounded-t lg:rounded-t-none lg:rounded-l"
-                                        src="/images/2.jpg" alt="Woman holding a mug"/>
+                                        src={placeholder} alt="Woman holding a mug"/>
                                 </a>
                             </div>
                             <div
@@ -74,7 +76,7 @@ export default async function Home() {
                                         exercitationem praesentium nihil.</p>
                                 </div>
                                 <div className="flex items-center">
-                                    <img className="w-10 h-10 rounded-full mr-4" src="/images/1.jpg"
+                                    <Image className="w-10 h-10 rounded-full mr-4" src={placeholder}
                                          alt="Avatar of Jonathan Reinink"/>
                                     <div className="text-sm">
                                         <p className="text-gray-900 leading-none">Jonathan Reinink</p>
@@ -93,23 +95,34 @@ export default async function Home() {
                             posts.data.map((post) => (
                                 <Col key={`post-${post.id}`} sm={4} className="d-flex justify-content-center pb-5">
                                     <div className="rounded overflow-hidden shadow-lg">
-                                        <div className={'max-h-[275px]'}>
-                                            <Image className="w-full max-h-[275px] min-h-[275px] min-w-[415px] max-w-[415px]" src={(post.image) ? `${storageURI}${post.image}` : '/images/1.jpg'} alt={post.title} width={415} height={275}/>
-                                        </div>
-                                        <div className="px-6 py-4">
-                                            <div className="font-bold text-xl mb-2">{post.title}</div>
-                                            <p className="text-gray-700 text-base">
-                                                {(post.excerpt && post.excerpt !== '{}') ? post.excerpt : `Read in detail about ${post.title}`}
-                                            </p>
-                                        </div>
-                                        <div className="px-6 pt-4 pb-2">
-                                  <span
-                                      className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                                        <Link href={`post/${post.slug}`}>
+                                            <div className={'max-h-[275px]'}>
+                                                <Image
+                                                    className="w-full max-h-[275px] min-h-[275px] min-w-[415px] max-w-[415px]"
+                                                    src={(post.image) ? `${storageURI}${post.image}` : placeholder}
+                                                    alt={post.title} width={415} height={275}/>
+                                            </div>
+                                            <div className="px-6 py-4">
+                                                <div className="font-bold text-xl mb-2">{post.title}</div>
+                                                <p className="text-gray-700 text-base">
+                                                    {(post.excerpt && post.excerpt !== '{}') ? post.excerpt : `Read in detail about ${post.title}`}
+                                                </p>
+                                            </div>
+                                        </Link>
+                                        {/*<div className="px-6 pt-4 pb-2">
+                                          <span
+                                              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                              #photography
+                                          </span>
                                             <span
-                                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                                #travel
+                                            </span>
                                             <span
-                                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                                        </div>
+                                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                                #winter
+                                            </span>
+                                        </div>*/}
                                     </div>
                                 </Col>
                             ))

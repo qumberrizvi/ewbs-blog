@@ -1,6 +1,7 @@
 "use client";
 import {Container, Nav, Navbar, NavbarBrand, NavDropdown} from "react-bootstrap";
-import Image from 'next/image'
+import Image from 'next/image';
+import logo from '@/images/logo.png';
 
 type NavbarItem = {
     title: string;
@@ -143,6 +144,11 @@ export default function Header() {
             ],
         },
         {
+            title: 'Blog',
+            type: 'link',
+            url: '/blog'
+        },
+        {
             title: 'About Us',
             type: 'link',
             url: '/aboutus',
@@ -160,12 +166,12 @@ export default function Header() {
                 <Container className="d-flex justify-content-between align-items-center">
                     <NavbarBrand>
                         <a href={mainSiteUrl}>
-                            <Image src="/images/logo.png" width={201} height={80} alt="EWBS"/>
+                            <Image src={logo} width={201} height={80} alt="EWBS"/>
                         </a>
                     </NavbarBrand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mx-auto" id="navbar-nav-id">
+                        <Nav className="ms-auto" id="navbar-nav-id">
                             {
                                 navBar.map((item, index) => (
                                     (item.type === 'link') ? (
@@ -173,12 +179,13 @@ export default function Header() {
                                            key={`nav-item-${index}`}
                                            href={`${mainSiteUrl}${item.url}`}>{item.title}</a>
                                     ) : (
-                                        <NavDropdown className={'w-fit'} key={`nav-item-${index}`} title={item.title}
+                                        <NavDropdown className={'w-fit pr-1'} key={`nav-item-${index}`}
+                                                     title={item.title}
                                                      id={`basic-nav-dropdown-${index}`}>
                                             {
                                                 item.children?.map((child, childIndex) => (
                                                     <div className={'px-2 w-fit'} key={`nav-item-child-${childIndex}`}>
-                                                        <a className={'nav-item navbar-text hover:text-red-800 no-underline text-nowrap'}
+                                                        <a className={'nav-item navbar-text hover:text-red-800 no-underline'}
                                                            href={`${mainSiteUrl}${child.url}`}>{child.title}</a>
                                                     </div>
                                                 ))
