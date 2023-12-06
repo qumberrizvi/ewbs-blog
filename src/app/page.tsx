@@ -9,7 +9,7 @@ import Link from "next/link";
 import placeholder from '@/images/placeholder.png';
 
 const fetchPosts = async () => {
-    const posts: Paginator<Post> = await fetcher(endpoints.posts);
+    const posts: Paginator<Post> = await fetcher(endpoints.posts, true);
     return posts;
 }
 

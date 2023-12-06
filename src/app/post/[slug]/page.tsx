@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export async function generateMetadata({params}: { params: { slug: string } }): Promise<Metadata> {
     const appUrl = process.env.APP_URL || 'https://ewbsbusiness.ae/blog/';
-    const post: Post = await fetcher(`${endpoints.posts}${params.slug}`);
+    const post: Post = await fetcher(`${endpoints.posts}${params.slug}`, true);
     return {
         metadataBase: new URL(appUrl),
         title: post.seo_title || post.title,
@@ -30,8 +30,8 @@ export async function generateMetadata({params}: { params: { slug: string } }): 
 
 export default async function Page({params}: { params: { slug: string } }) {
     const storageURI = process.env.STORAGE_URL;
-    const post: Post = await fetcher(`${endpoints.posts}${params.slug}`);
-    const recentPosts: Paginator<Post> = await fetcher(`${endpoints.posts}?limit=3`);
+    const post: Post = await fetcher(`${endpoints.posts}${params.slug}`, true);
+    const recentPosts: Paginator<Post> = await fetcher(`${endpoints.posts}?limit=3`, false, 3600);
 
     return (
         <Container className="py-5">
