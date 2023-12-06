@@ -7,6 +7,7 @@ import {Post} from "@/types/post";
 import {Metadata} from "next";
 import {Paginator} from "@/types/paginator";
 import placeholder from '@/images/placeholder.png';
+import Link from "next/link";
 
 export async function generateMetadata({params}: { params: { slug: string } }): Promise<Metadata> {
     const appUrl = process.env.APP_URL || 'https://ewbsbusiness.ae/blog/';
@@ -62,27 +63,29 @@ export default async function Page({params}: { params: { slug: string } }) {
                         (recentPosts?.data?.length) && (
                             recentPosts.data.map((post, index) => (
                                 <Col key={`recent-post-${index}`} className="py-2">
-                                    <div
-                                        className="border border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                                    <Link href={`/blog/post/${post.slug}`}>
                                         <div
-                                            className="w-full h-full flex-none rounded-t lg:rounded-t-none lg:rounded-l overflow-hidden position-relative">
-                                            <Image
-                                                className="w-full max-h-60 position-relative object-cover rounded-t lg:rounded-t-none lg:rounded-l"
-                                                src={(post.image) ? `${storageURI}${post.image}` : placeholder}
-                                                alt="Woman holding a mug"
-                                                fill={true}
-                                            />
-                                        </div>
-                                        <div
-                                            className="pt-2">
-                                            <div>
-                                                <div className="text-gray-900 font-bold text-xl mb-2">{post.title}</div>
-                                                <p className="text-gray-700 text-sm">
-                                                    {(post.excerpt && post.excerpt !== '{}') ? post.excerpt : `Read in detail about ${post.title}`}
-                                                </p>
+                                            className="border border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                                            <div
+                                                className="w-full h-full flex-none rounded-t lg:rounded-t-none lg:rounded-l overflow-hidden position-relative">
+                                                <Image
+                                                    className="w-full max-h-60 position-relative object-cover rounded-t lg:rounded-t-none lg:rounded-l"
+                                                    src={(post.image) ? `${storageURI}${post.image}` : placeholder}
+                                                    alt="Woman holding a mug"
+                                                    fill={true}
+                                                />
+                                            </div>
+                                            <div
+                                                className="pt-2">
+                                                <div>
+                                                    <div className="text-gray-900 font-bold text-xl mb-2">{post.title}</div>
+                                                    <p className="text-gray-700 text-sm">
+                                                        {(post.excerpt && post.excerpt !== '{}') ? post.excerpt : `Read in detail about ${post.title}`}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </Col>
                             ))
                         )

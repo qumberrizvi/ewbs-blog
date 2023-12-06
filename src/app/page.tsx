@@ -95,7 +95,7 @@ export default async function Home() {
                             posts.data.map((post) => (
                                 <Col key={`post-${post.id}`} sm={4} className="d-flex justify-content-center pb-5">
                                     <div className="rounded overflow-hidden shadow-lg">
-                                        <Link href={`post/${post.slug}`}>
+                                        <Link href={`/blog/post/${post.slug}`}>
                                             <div className={'max-h-[275px]'}>
                                                 <Image
                                                     className="w-full max-h-[275px] min-h-[275px] min-w-[415px] max-w-[415px]"
