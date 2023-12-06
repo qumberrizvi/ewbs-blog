@@ -63,7 +63,7 @@ export default async function Page({params}: { params: { slug: string } }) {
                         (recentPosts?.data?.length) && (
                             recentPosts.data.map((post, index) => (
                                 <Col key={`recent-post-${index}`} className="py-2">
-                                    <Link href={`/blog/post/${post.slug}`}>
+                                    <Link href={`/post/${post.slug}`}>
                                         <div
                                             className="border border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                                             <div
