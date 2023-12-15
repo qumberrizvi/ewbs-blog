@@ -71,7 +71,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            {/*<div className="footer2">
+            <div className="footer2">
                 <div className="f1" data-wow-duration="1s">
                     <h5>Useful Links</h5>
                     <ul>
@@ -79,7 +79,6 @@ export default function Footer() {
                         <li><a href="contactus.html" className="text-black">Contact Us</a></li>
                         <li><a href="Privacy-Policy.html" className="text-black">Privacy Policy</a></li>
                         <li><a href="Terms-And-Condition.html" className="text-black">Terms & Conditions</a></li>
-
                     </ul>
                 </div>
                 <div className="f3" data-wow-duration="1s">
@@ -95,7 +94,10 @@ export default function Footer() {
 
                 </div>
                 <div className="f2" data-wow-duration="1s">
-                    <img src="https://ewbsbusiness.ae/assets/img/logo.png"/><br/>
+                    <div className="flex items-center justify-center">
+                        <img src="https://ewbsbusiness.ae/assets/img/logo.png" alt="Logo"/>
+                    </div>
+                    <br/>
                     <br/>
                     <h6 style={{fontWeight: 600}}>Subscribe to our Newsletter</h6>
                     <div className="div-text-box">
@@ -104,48 +106,16 @@ export default function Footer() {
                     <br/>
                     <p style={{fontSize: '12px'}}>Sign up for our latest news & articles. We won’t give you spam
                         mails.</p>
+                    <div className="flex items-center justify-center">
                     <img src="https://ewbsbusiness.ae/assets/img/ficon.png" className="img-fluid"/>
-                </div>
-                <div className="f1" data-wow-duration="1s">
-                    <h5>Useful Links</h5>
-                    <ul>
-                        <li><a href="aboutus.html" className="text-black">About Us</a></li>
-                        <li><a href="contactus.html" className="text-black">Contact Us</a></li>
-                        <li><a href="Privacy-Policy.html" className="text-black">Privacy Policy</a></li>
-                        <li><a href="Terms-And-Condition.html" className="text-black">Terms & Conditions</a></li>
-
-                    </ul>
-                </div>
-                <div className="f3" data-wow-duration="1s">
-                    <h5>Dubai Branch</h5>
-                    <p> Office No 903<br/> Floor No. 9th, Aspin Commercial Tower,Shaikh Zayed Road,Dubai (UAE)</p>
-                    <p><b>Phone</b><br/> +971 54 252 7070,+971 564444095</p>
-                    <p><b>Email</b><br/> info@ewbsbusiness.ae</p>
-                </div>
-                <div className="f4" data-wow-duration="1s">
-                    <h5>India Branch</h5>
-                    <p>11th floor, Wing A, Summit Building, Vibhuti Khand, Gomti Nagar,<br/> Lucknow-226010</p>
-                    <p><b>Phone</b><br/> +91 8423111088</p>
-
-                </div>
-                <div className="f2" data-wow-duration="1s">
-                    <img src="https://ewbsbusiness.ae/assets/img/logo.png"/><br/>
-                    <br/>
-                    <h6 style={{fontWeight: 600}}>Subscribe to our Newsletter</h6>
-                    <div className="div-text-box">
-                        <input type="text"/><input type="button" value="Subscribe"/>
                     </div>
-                    <br/>
-                    <p style={{fontSize: '12px'}}>Sign up for our latest news & articles. We won’t give you spam
-                        mails.</p>
-                    <img src="https://ewbsbusiness.ae/assets/img/ficon.png" className="img-fluid"/>
                 </div>
             </div>
             <div className="footer3">
                 <div className="copyright">
                     Copyrights 2023. All rights reserved.
                 </div>
-            </div>*/}
+            </div>
         </>
     )
 }

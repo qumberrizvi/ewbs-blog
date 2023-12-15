@@ -124,26 +124,22 @@ a {
 
 .footer2 {
     width: 100%;
-    background-image: none;
-    background-color: #c5e5fa;
+    background-image: url('../images/footer.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 5%;
-    height: auto;
+    height: 500px;
     display: flex;
     justify-content: space-between;
     margin-top: -4.2%;
-    flex-wrap: wrap;
 }
 
 .f1,
 .f2,
 .f3,
 .f4 {
-    width: 100%;
+    width: 22%;
 }
-
-
 .f1 h5,
 .f2 h5,
 .f3 h5,
@@ -189,7 +185,15 @@ a {
     line-height: 2;
 }
 
-
+.copyright
+{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    background-color: #01aebc;
+    color: white;
+    padding: 3px;
+}
 
 /*----------local------*/
 .w-70 {
